@@ -23,6 +23,7 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
         tableView.delegate = self
         tableView.dataSource = self
         ajouterChanson()
+        title = "Mes vidéos préférées"
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
