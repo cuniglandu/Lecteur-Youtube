@@ -12,7 +12,11 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
 
     @IBOutlet weak var tableView: UITableView!
     
+    
     var chansons = [Chanson]()
+    
+    let identifientCell = "ChansonCell"
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,9 +30,17 @@ class TableauController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let chanson = chansons[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: identifientCell) as? ChansonCell {
+            cell.creerCell(chanson)
+            return cell
+        }
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 170
+    }
     func ajouterChanson() {
         chansons = [Chanson]()
         let skate1 = Chanson(artiste: "NKA", titre: "SKATING WITH PETER, VERONICA & JOEL !!!", code: "Swh7atj0XAs")
