@@ -13,7 +13,7 @@ class Chanson {
     private var _titre: String
     private var _code: String
     private var _baseUrlVideo = "https://www.youtube.com/embed/"
-    private var _baseUrlMiniature = "http://www.i.ytimg.com/vi/"
+    private var _baseUrlMiniature = "http://i.ytimg.com/vi/"
     private var _finUrlMiniature = "/maxresdefault.jpg"
     
     var artiste: String {
@@ -27,9 +27,11 @@ class Chanson {
     var videoUrl: String {
         return _baseUrlVideo + _code
     }
-    
+   
     var miniatureUrl: String {
+        
         return _baseUrlMiniature + _code + _finUrlMiniature
+        
     }
     
     init(artiste: String, titre: String, code: String) {

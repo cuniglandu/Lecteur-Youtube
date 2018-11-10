@@ -32,11 +32,9 @@ class ChansonCell: UITableViewCell {
         let attributed = NSMutableAttributedString(string: self.chanson.titre, attributes: [.font: UIFont.boldSystemFont(ofSize: 20), .foregroundColor: UIColor.black])
         let secondeLigne = NSMutableAttributedString(string: "\n" + self.chanson.artiste, attributes: [.font: UIFont.italicSystemFont(ofSize: 20), .foregroundColor: UIColor.darkGray])
         attributed.append(secondeLigne)
-        artisteEtTitreLabel.attributedText = attributed
-        
+        artisteEtTitreLabel.attributedText = attributed        
     }
 
-    
     func telechargerImage() {
         miniature.image = #imageLiteral(resourceName: "logo")
         if let url = URL(string: self.chanson.miniatureUrl) {
@@ -50,7 +48,5 @@ class ChansonCell: UITableViewCell {
             }
             task.resume()
         }
-        
-        
     }
 }
